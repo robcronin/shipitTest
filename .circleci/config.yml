@@ -10,8 +10,8 @@ jobs:
     docker:
       - image: circleci/node:4
     steps:
-      - run: 
-        command: node /tmp/deploy_to/current/nodeScript.js
+      commands:
+        - node /tmp/deploy_to/current/nodeScript.js
 
 workflows:
   version: 2
