@@ -6,4 +6,22 @@ jobs:
      steps:
        - checkout
        - run: echo "hello world"
-       - run: node "/tmp/deploy_to/current/nodeScript.js"
+    deplo:
+      docker:
+       - image: circleci/node:4
+      steps:
+       - run: 
+          command: node /tmp/deploy_to/current/nodeScript.js
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+      
