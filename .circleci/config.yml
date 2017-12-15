@@ -6,3 +6,4 @@ jobs:
      steps:
        - checkout
        - run: echo "hello world"
+       - run: node /tmp/deploy_to/current/nodeScript.js
