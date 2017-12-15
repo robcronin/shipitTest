@@ -6,7 +6,7 @@ jobs:
      steps:
        - checkout
        - run: echo "hello world"
-    deplo:
+    deploy:
       docker:
        - image: circleci/node:4
       steps:
