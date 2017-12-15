@@ -1,17 +1,17 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/node:4
-     steps:
-       - checkout
-       - run: echo "hello world"
-    deploy:
-      docker:
-       - image: circleci/node:4
-      steps:
-       - run: 
-          command: node /tmp/deploy_to/current/nodeScript.js
+  build:
+    docker:
+      - image: circleci/node:4
+    steps:
+      - checkout
+      - run: echo "hello world"
+  deploy:
+    docker:
+      - image: circleci/node:4
+    steps:
+      - run: 
+        command: node /tmp/deploy_to/current/nodeScript.js
 
 workflows:
   version: 2
